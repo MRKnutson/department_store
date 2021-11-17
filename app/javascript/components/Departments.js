@@ -4,7 +4,7 @@ const Departments = (props) => {
     const renderDepartments = () => {
       return props.departments.map((department)=>{
         return(
-        <div>
+        <div className = "department-container">
           <h1>Dept Name: {department.name}</h1>
           <p>Dept ID: {department.id}</p>
           <a href ={`departments/${department.id}`}>Show</a>

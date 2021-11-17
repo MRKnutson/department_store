@@ -9,6 +9,7 @@ const Departments = (props) => {
           <p>Dept ID: {department.id}</p>
           <a href ={`departments/${department.id}`}>Show</a>
           <a href ={`departments/${department.id}/edit`}>Edit Department</a>
+          <a href ={`departments/${department.id}`} data-method = "delete">Delete Department</a>
         </div>
        );
       });

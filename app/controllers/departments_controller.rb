@@ -44,10 +44,13 @@ class DepartmentsController < ApplicationController
       # TODO: generate errors
     end
    end
-   
+
 
   def destroy
     # delete an individual department
+    @department.delete
+    # redirect back to index (nothing to view here - You just deleted it you jerk!)
+    redirect_to departments_path
   end
 
   # Set section to only be seen locally

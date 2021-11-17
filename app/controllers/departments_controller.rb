@@ -20,10 +20,20 @@ class DepartmentsController < ApplicationController
 
   def create
     # Add new department to database
+    # start by adding department to local memory 
+    department = Department.new(department_params)
+    # if able to save (params.require satisfied), i.e., able to push to DB, then redirect to index of departments
+    if(department.save)
+      redirect_to departments_path
+    else
+      # TODO: generate errors 
+    end
+    # Add new department to database
   end
 
   def edit
     # Send us to edit department form
+    render component: "EditDepartment"
   end
 
   def update
@@ -42,5 +52,8 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
   end
 
+  def department_params
+    params.require(:department).permit(:name)
+  end
 
 end

@@ -7,6 +7,8 @@ const Departments = (props) => {
         <div>
           <h1>Dept Name: {department.name}</h1>
           <p>Dept ID: {department.id}</p>
+          <a href ={`departments/${department.id}`}>Show</a>
+          <a href ={`departments/${department.id}/edit`}>Edit Department</a>
         </div>
        );
       });
@@ -14,6 +16,7 @@ const Departments = (props) => {
   return (
     <div>
       {renderDepartments()}
+      <a href = "departments/new">New Department</a>
     </div>
   )
 };

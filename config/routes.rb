@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # (C)
+  get "/departments/new", to: "departments#new"
+  post "/departments", to: "departments#create"
+
+  # (R)
+  get "/departments/", to: "departments#index"
+  get "/departments/:id", to: "departments#show"
+
+  # (U)
+  get "departments/:id/edit", to: "departments#edit"
+  put "/departments/:id", to: "departments#update"
+  # (D)
+  delete "departments/:id", to: "departments#destroy"
 end

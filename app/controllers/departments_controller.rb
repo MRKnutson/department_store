@@ -33,12 +33,18 @@ class DepartmentsController < ApplicationController
 
   def edit
     # Send us to edit department form
-    render component: "EditDepartment"
+    render component: "EditDepartment", props: { department: @department }
   end
 
   def update
-    # update to database
-  end
+    # if edits match required parameters and able to push changes to database then redirect to index of departments
+    if(@department.update(department_params))
+      redirect_to departments_path
+    else
+      # TODO: generate errors
+    end
+   end
+   
 
   def destroy
     # delete an individual department

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   # (U)
   get "departments/:id/edit", to: "departments#edit"
-  put "/departments/:id", to: "departments#update"
+  put "departments/:id", to: "departments#update"
+  patch "departments/:id", to: "departments#update"
   # (D)
   delete "departments/:id", to: "departments#destroy"
 end

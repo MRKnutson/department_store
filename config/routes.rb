@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # # (D)
   # delete "departments/:id", to: "departments#destroy"
 
-  resources: departments do
-    resources: items
+  resources :departments do
+    resources :items
   end
 end

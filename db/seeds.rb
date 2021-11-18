@@ -8,6 +8,18 @@
 
 Department.destroy_all
 
-Department.create(name:'Toys')
-Department.create(name:'Clothes')
-Department.create(name:'Grocery')
+toys = Department.create(name:'Toys')
+clothes = Department.create(name:'Clothes')
+grocery = Department.create(name:'Grocery')
+
+toys.items.create(name:'Basketball', price: 12.99)
+toys.items.create(name:'Doll', price: 15.95)
+toys.items.create(name:'Nerf Gun', price: 65.99)
+
+clothes.items.create(name:'Shirt', price: 19.95)
+clothes.items.create(name:'Jeans', price: 49.95)
+clothes.items.create(name:'Ball Cap', price: 9.95)
+
+grocery.items.create(name:'Bananas', price: 6.95)
+grocery.items.create(name:'Rice', price: 2.95)
+grocery.items.create(name:'M&Ms', price: 1.95)

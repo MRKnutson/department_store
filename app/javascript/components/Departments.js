@@ -5,7 +5,7 @@ const Departments = (props) => {
       return props.departments.map((department)=>{
         return(
         <div className = "department-container">
-          <h1>Dept Name: {department.name}</h1>
+          <h2>Dept Name: {department.name}</h2>
           <p>Dept ID: {department.id}</p>
           <a href ={`departments/${department.id}`}>Show</a>
           <a href ={`departments/${department.id}/edit`}>Edit Department</a>
@@ -16,8 +16,11 @@ const Departments = (props) => {
     };
   return (
     <div>
+      <div className="page-title">
+        <h1>Departments From Awesome Store:</h1>
+      </div>
       {renderDepartments()}
-      <a href = "departments/new">New Department</a>
+      <a className = "new-button" href = "departments/new">New Department</a>
     </div>
   )
 };

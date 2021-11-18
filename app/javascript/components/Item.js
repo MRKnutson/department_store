@@ -2,7 +2,7 @@ import React from "react"
 
 const Item = (props) => {
   return (
-    <div>
+    <div style ={{margin: "10px", border: "1px solid black"}}>
       <h1>Department: {props.department.name}</h1>
       <a href ={`/departments`}>Department List</a>
       <a href ={`/departments/${props.department.id}/items`}>Item List</a>

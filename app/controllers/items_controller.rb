@@ -4,6 +4,19 @@ class ItemsController < ApplicationController
 
   # C
 
+  def new
+    render component: "NewItem", props: { department: @department }
+  end
+
+  def create
+    @item = @department.items.new(item_params)
+    if(@item.save)
+      redirect_to [@department, @item]
+    else
+      # TODO: Error handling
+    end
+  end
+
   # R
   def index
     render component: "Items", props: { department: @department, items: @department.items }
@@ -25,6 +38,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = @department.items.find(params[:id])
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :price)
   end
 
 

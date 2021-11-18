@@ -48,7 +48,7 @@ class DepartmentsController < ApplicationController
 
   def destroy
     # delete an individual department
-    @department.delete
+    @department.destroy
     # redirect back to index (nothing to view here - You just deleted it you jerk!)
     redirect_to departments_path
   end

@@ -9,7 +9,7 @@ const Items = (props) => {
           <p>item id: {item.id}</p>
           <a href = {`/departments/${props.department.id}/items/${item.id}`}>Item Details</a>
           <a href = {`/departments/${props.department.id}/items/${item.id}/edit`}>Edit Item</a>
-          <a data-method = "destroy"href = {`/departments/${props.department.id}/items/:id`}>Delete Item</a>
+          <a data-method = "delete" href = {`/departments/${props.department.id}/items/${item.id}`}>Delete Item</a>
         </div>
       )
     })

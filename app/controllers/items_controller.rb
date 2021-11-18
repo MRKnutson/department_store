@@ -28,6 +28,18 @@ class ItemsController < ApplicationController
 
   # U
 
+  def edit
+    render component: "EditItem", props: { department: @department, item: @item }
+  end
+
+  def update
+    if(@item.update(item_params))
+      redirect_to [@department, @item]
+    else
+      # TODO: Error handling
+    end
+  end
+
   # D
   def destroy
     @item.destroy

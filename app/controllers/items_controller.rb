@@ -9,6 +9,10 @@ class ItemsController < ApplicationController
     render component: "Items", props: { department: @department, items: @department.items }
   end
 
+  def show
+    render component: "Item", props: { department: @department, item: @item }
+  end
+
   # U
 
   # D

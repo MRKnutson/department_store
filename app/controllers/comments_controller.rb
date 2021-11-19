@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   before_action :set_item
+  before_action :set_department
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # C
@@ -20,7 +21,7 @@ class CommentsController < ApplicationController
 
   # R
   def index
-    render component: "Comments", props: { item: @item, comments: @item.comments }
+    render component: "Comments", props: { department: @dept, item: @item, comments: @item.comments }
   end
 
   def show
@@ -51,6 +52,10 @@ class CommentsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def set_department
+    @dept = Department.find(@item.department_id)
   end
 
   def set_comment

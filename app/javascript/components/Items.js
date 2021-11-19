@@ -5,7 +5,7 @@ const Items = (props) => {
     return props.items.map((item) => {
       return (
         <div className="department-container">
-          <h4>{item.name}: {item.price}</h4>
+          <h4>{item.name}: ${item.price}</h4>
           <p>item id: {item.id}</p>
           {/* <a href ={`departments/${department.id}/items`}>Department Details</a> */}
           <a href = {`/items/${item.id}/comments`}>Item Details</a>

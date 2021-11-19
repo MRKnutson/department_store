@@ -17,7 +17,9 @@ const Comments = (props) => {
   };
   return (
     <div>
+      <h1>Department: {props.department.name}</h1>
       <h2>Item: {props.item.name}</h2>
+      <p>Item Price: ${props.item.price}</p>
       <p>Item ID: {props.item.id}</p>
       <h3>Comments related to this item:</h3>
       <a href={`/departments/${props.item.department_id}/items`}>Items List</a>

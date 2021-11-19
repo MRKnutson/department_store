@@ -11,6 +11,8 @@ const Comment = (props) => {
       </div>
       <div  style ={{margin: "10px", border: "1px solid black"}}>
         <a href = {`/items/${props.item.id}/comments`}>All Comments</a>
+        <a href = {`/items/${props.item.id}/comments/${props.comment.id}/edit`}>Edit Comment</a>
+        <a data-method = "delete" href = {`/items/${props.item.id}/comments/${props.comment.id}`}>Delete Comment</a>
       </div>
     </div>
   );

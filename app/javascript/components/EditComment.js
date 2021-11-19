@@ -9,7 +9,7 @@ const EditComment = (props) => {
         <p>Author:</p>
         <input defaultValue={props.comment.name} name ="comment[name]"/>
         <p>Comment:</p>
-        <input defaultValue={props.comment.body} name ="comment[body]"/>
+        <textarea defaultValue={props.comment.body} name ="comment[body]"/>
         <button type = "submit">Submit Comment Edits</button>
       </form>
       <a href={`/items/${props.item.id}/comments`}>Back to all comments</a>

@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   # C
 
   def new
-    render component: "NewComment"
+    render component: "NewComment", props: { department: @dept, item: @item }
   end
 
   def create
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-    render component: "Comment", props: { item: @item, comment: @comment }
+    render component: "Comment", props: { department: @dept, item: @item, comment: @comment }
   end
 
   # U
@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
   # D
   def destroy
     @comment.destroy
-    redirect_to department_items_path(@item)
+    redirect_to item_comments_path(@item)
   end
 
   private

@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   # C
 
   def new
-    render component: "NewComment", props: { department: @department }
+    render component: "NewComment"
   end
 
   def create
@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if(@comment.update(item_params))
+    if(@comment.update(comment_params))
       redirect_to [@item, @comment]
     else
       # TODO: Error handling

@@ -17,10 +17,10 @@ const Comments = (props) => {
   };
   return (
     <div>
-      <h1>Item: {props.item.name}</h1>
-      <p>Dept ID: {props.item.id}</p>
+      <h2>Item: {props.item.name}</h2>
+      <p>Item ID: {props.item.id}</p>
       <h3>Comments related to this item:</h3>
-      <a href="/items">Comment List</a>
+      <a href={`/departments/${props.item.department_id}/items`}>Items List</a>
       <a href={`/items/${props.item.id}/comments/new`}>Add New Comment</a>
       {renderComments()}
     </div>

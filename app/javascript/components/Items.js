@@ -7,7 +7,8 @@ const Items = (props) => {
         <div className="department-container">
           <h4>{item.name}: {item.price}</h4>
           <p>item id: {item.id}</p>
-          <a href = {`/departments/${props.department.id}/items/${item.id}`}>Item Details</a>
+          {/* <a href ={`departments/${department.id}/items`}>Department Details</a> */}
+          <a href = {`/items/${item.id}/comments`}>Item Details</a>
           <a href = {`/departments/${props.department.id}/items/${item.id}/edit`}>Edit Item</a>
           <a data-method = "delete" href = {`/departments/${props.department.id}/items/${item.id}`}>Delete Item</a>
         </div>

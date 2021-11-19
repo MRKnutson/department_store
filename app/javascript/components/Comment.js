@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import React from "react"
 
 const Comment = (props) => {
   return (
@@ -10,7 +10,6 @@ const Comment = (props) => {
         <p>Comment ID: {props.comment.id}</p>
       </div>
       <div  style ={{margin: "10px", border: "1px solid black"}}>
-        <a href= {`/items`}>Item List</a>
         <a href = {`/items/${props.item.id}/comments`}>All Comments</a>
       </div>
     </div>
